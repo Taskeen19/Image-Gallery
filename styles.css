@@ -1,0 +1,189 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  background-color: #f5f5f5;
+  color: #000000;
+  padding-top: 70px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #d6d2c9;
+}
+::-webkit-scrollbar-thumb {
+  background: #5600c0;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #32025c;
+}
+
+.navbar {
+  background-color: #000000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030;
+}
+
+.image-container {
+  padding-top: 20px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image-container img {
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
+  transition: transform 0.3s cubic-bezier(.4,2,.6,1), box-shadow 0.3s;
+  display: block;
+  border-radius: 10px;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgb(255, 255, 255);
+}
+@media (max-width: 767px) {
+  .image-container img {
+    width: 80%;
+    height: auto;
+  }
+}
+
+.image-container img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 32px 8px rgba(86,0,192,0.55), 0 8px 24px rgba(86,0,192,0.25);
+}
+
+/* Stronger hover glow in dark mode */
+body.dark-mode .image-container img:hover {
+  box-shadow: 0 0 48px 16px #a259ff, 0 8px 32px 8px #5600c0;
+  border: 2px solid #a259ff;
+}
+
+.modal-dialog {
+  max-width: none;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  width: auto;
+  border-radius: 10px;
+}
+
+.modal-body {
+  position: relative;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-body img {
+  width: 100%;
+  height: auto;
+  max-height: calc(100vh - 3.5rem);
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.close-modal {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  color: #ffffff;
+  font-size: 2rem;
+  z-index: 1;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  z-index: 1040;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.modal.show ~ .modal-backdrop {
+  opacity: 1;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 10px 0;
+  background-color: #ffffff;
+  border-top: 1px solid #eee;
+}
+
+/* Optional: Make footer text visible in dark mode */
+body.dark-mode .footer {
+  background: #000;
+  color: #fff;
+  border-top: 1px solid #222;
+}
+
+body.dark-mode {
+  background-color: #000000;
+  color: #fff;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: #fff;
+  transition: color 0.2s, background 0.2s, box-shadow 0.2s;
+  border-radius: 6px;
+  position: relative;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active,
+.navbar-dark .navbar-nav .nav-link.filter-btn.active {
+  color: #fff;
+  background: #5600c0;
+  box-shadow: 0 2px 12px 0 rgba(86,0,192,0.25);
+  text-shadow: 0 0 6px #a259ff;
+}
+
+/* Dark mode navbar hover */
+body.dark-mode .navbar-dark .navbar-nav .nav-link:hover,
+body.dark-mode .navbar-dark .navbar-nav .nav-link.active,
+body.dark-mode .navbar-dark .navbar-nav .nav-link.filter-btn.active {
+  background: #a259ff;
+  color: #000;
+  box-shadow: 0 2px 16px 0 #a259ff99;
+  text-shadow: 0 0 8px #fff;
+}
+
+.modal-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.3);
+  border: none;
+  color: #fff;
+  font-size: 2.2rem;
+  z-index: 2;
+  padding: 0.3em 0.7em;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.modal-nav.prev { left: 10px; }
+.modal-nav.next { right: 10px; }
+.modal-nav:hover { background: rgba(86,0,192,0.7); }
