@@ -27,7 +27,6 @@ No build steps or dependencies required—everything runs in the browser.
 ## Credits
 
 - Images from [Unsplash](https://unsplash.com/)
-- Designed by [Raja Adan Ali](https://rajaadanali.info)
 - Built with [Bootstrap 4](https://getbootstrap.com/) and [jQuery](https://jquery.com/)
 
 ## License
